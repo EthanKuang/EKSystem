@@ -1,0 +1,63 @@
+<template>
+  <el-container>
+    <el-aside width="200px">
+      <aside-menu></aside-menu>
+    </el-aside>
+
+    <el-container>
+      <el-header height="56px">
+        <header-menu></header-menu>
+      </el-header>
+      <el-main>
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
+</template>
+
+<script>
+import AsideMenuComponent from './components/asideMenu'
+import HeaderMenuComponent from './components/headerMenu'
+export default {
+  name: 'App',
+  components: {
+    AsideMenu: AsideMenuComponent,
+    HeaderMenu: HeaderMenuComponent
+  }
+}
+</script>
+
+<style type="text/css">
+  /*
+    找到html标签、body标签，和挂载的标签
+    都给他们统一设置样式
+  */
+  html,body,#app,.el-container{
+    /*设置内部填充为0，几个布局元素之间没有间距*/
+    padding: 0px;
+      /*外部间距也是如此设置*/
+    margin: 0px;
+    /*统一设置高度为100%*/
+    height: 100%;
+  }
+  .el-header {
+    background-color: #cedcde;
+  }
+  .el-aside {
+    background-color: #324057;
+  }
+  .el-main {
+  }
+  .el-col {
+    width: 200px;
+  }
+  .el-menu-item {
+    width: 200px;
+  }
+  .el-submenu {
+    width: 200px;
+  }
+  a {
+    text-decoration-line: none;
+  }
+</style>
